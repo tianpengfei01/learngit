@@ -1,3 +1,5 @@
+原文地址：https://www.cnblogs.com/tocy/p/git-command-line-manual.html
+
 0. 安装Git
 网上有很多Git安装教程，如果需要图形界面，windows下建议使用TortoiseGit，linux建议使用Git GUI或者GITK。
 
