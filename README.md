@@ -1,9 +1,11 @@
 **原文地址：https://www.cnblogs.com/tocy/p/git-command-line-manual.html**
 
-##0. 安装Git
+## 0. 安装Git
+
 网上有很多Git安装教程，如果需要图形界面，windows下建议使用TortoiseGit，linux建议使用Git GUI或者GITK。
 
-##1. Git基本配置
+## 1. Git基本配置
+
 git config可以配置git的参数，可以使用git config --list查看已经配置的git参数。其中有三个级别的保存位置，--system、--global、--local，分别表示所有用户（本系统）、当前用户（全局）、本地配置（当前目录），默认使用--local。
 
 配置用户名及邮箱
@@ -16,17 +18,22 @@ git config --global user.email zyvj@qq.com
 其他配置
 如果在windows下建议还是配置下默认文本编辑器core.editor和差异分析工具merge.tool。
 
-##2. 创建Git仓库
+## 2. 创建Git仓库
+
 可以直接调用git init初始化当前目录，即创建Git仓库。
 
-##3. 获得Git仓库
+## 3. 获得Git仓库
+
 如果需要克隆远程仓库，可以使用git clone，比如：
+
 ```git
 git clone https://git.oschina.net/Tocy/SampleCode.git
 ```
-##4. 提交更新
+## 4. 提交更新
+
 在windows下的Git GUI中，提交很简单，右键-TortoiseGit-Commit。那么命令行下需要怎么处理？
 Git中每个文件都有三种状态：committed、staged、modified。它们之间关系如下：
+
 ```git
 commit <-- stage <-- modify
 commit --> --- --modify
@@ -77,16 +84,20 @@ git rm
 ```
 git rm会把文件从当前目录删除（不会保存删除的文件）。如果需要从Git仓库中删除，但保留在当前工作目录中，亦即从跟踪清单中删除，可以使用git rm --cached readme.md。
 
-##5. 提交历史查看
+## 5. 提交历史查看
+
 可以使用git log查看当前工程的所有提交的日志。
+
 ```git
 git log --stat      # 仅显示摘要选项
 git log --pretty=oneline        # 定制记录格式
 git log --graph     # 图像化分支和版本更新
 ```
 
-##6. 远程仓库
+## 6. 远程仓库
+
 可以使用git remote查看当前的远程库。
+
 ```git
 git remote -v
 ```
@@ -117,7 +128,8 @@ git remote show origin
 git remote rename [old_name] [new_name]
 git remote rm [remote_name]
 ```
-##7. 打Tags
+## 7. 打Tags
+
 可使用git tag显示当前库中的标签。
 
 添加标签（含附注）
@@ -141,7 +153,8 @@ git push origin v0.1
 ```git
 git push origin --tags
 ```
-##8. Git分支
+## 8. Git分支
+
 git分支是轻量级的，速度很快，仅记录索引信息。
 
 显示所有分支
